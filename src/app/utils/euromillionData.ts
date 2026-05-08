@@ -25,6 +25,35 @@ export interface Draw {
 
 export const historicalDraws: Draw[] = [
   {
+    "date": "2026-05-05",
+    "numbers": [
+      3,
+      4,
+      8,
+      20,
+      31
+    ],
+    "stars": [
+      6,
+      8
+    ],
+    "prizes": {
+      "rank1": 0.0,
+      "rank2": 131785.5,
+      "rank3": 20533.6,
+      "rank4": 892.4,
+      "rank5": 84.2,
+      "rank6": 46.5,
+      "rank7": 34.4,
+      "rank8": 12.1,
+      "rank9": 9.1,
+      "rank10": 8.1,
+      "rank11": 6.1,
+      "rank12": 4.9,
+      "rank13": 3.7
+    }
+  },
+  {
     "date": "2026-05-01",
     "numbers": [
       3,
