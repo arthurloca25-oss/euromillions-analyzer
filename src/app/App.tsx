@@ -18,7 +18,7 @@ export default function App() {
   const handleSelectNumber = (num: number) => {
     if (selectedNumbers.includes(num)) {
       setSelectedNumbers(selectedNumbers.filter(n => n !== num));
-    } else if (selectedNumbers.length < 5) {
+    } else if (selectedNumbers.length < 10) {
       setSelectedNumbers([...selectedNumbers, num].sort((a, b) => a - b));
     }
   };
