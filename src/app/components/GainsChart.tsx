@@ -47,13 +47,19 @@ export function GainsChart({ data }: GainsChartProps) {
       .filter((d): d is string => d !== undefined);
   };
 
+  // S'assurer que chaque date est unique en utilisant l'index comme clé de secours
+  const dataWithUniqueKeys = data.map((item, index) => ({
+    ...item,
+    key: `${item.date}-${index}`,
+  }));
+
   return (
     <div className="w-full bg-gradient-to-br from-slate-50 to-blue-50 p-4 md:p-6 rounded-xl shadow-lg border-2 border-blue-200">
       <h3 className="mb-4 md:mb-5 text-center text-base md:text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         📈 Évolution des gains/pertes cumulés
       </h3>
       <ResponsiveContainer width="100%" height={250} className="md:h-[300px]">
-        <LineChart data={data}>
+        <LineChart data={dataWithUniqueKeys}>
           <defs>
             <linearGradient id="colorCumulative" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3}/>
